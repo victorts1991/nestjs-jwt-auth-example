@@ -24,9 +24,9 @@ export class UsersService {
 
   private async hashTestPasswords() {
     for (const user of this.users) {
-      user.password = await bcrypt.hash('senha123', 10);
+      user.password = await bcrypt.hash('123password', 10);
     }
-    console.log('Senhas de teste hashed com sucesso.');
+    console.log('Successfully hashed test passwords.');
   }
 
   async findOne(username: string): Promise<User | undefined> {

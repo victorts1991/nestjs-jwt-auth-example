@@ -9,7 +9,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const secret = configService.get<string>('JWT_SECRET');
 
     if (!secret) {
-      throw new Error('JWT_SECRET não está definido nas variáveis de ambiente. A aplicação não pode iniciar com segurança.');
+      throw new Error('JWT_SECRET is not set in the environment variables. The application cannot start securely.');
     }
 
     super({
